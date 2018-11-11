@@ -33,7 +33,33 @@ beforeEach(() => {
   blessed.screen.returns({
     append: () => {},
     key: () => {},
-    render: () => {}
+    render: sinon.spy()
+  });
+
+  blessed.listbar.returns({
+    selected: "selected",
+    setLabel: sinon.spy(),
+    setProblems: sinon.spy(),
+    selectTab: sinon.spy(),
+    setItems: sinon.spy()
+  });
+
+  blessed.box.returns({
+    setContent: sinon.spy(),
+    setLabel: sinon.spy()
+  });
+
+  blessed.log.returns({
+    log: sinon.spy()
+  });
+
+  blessed.table.returns({
+    setData: sinon.spy()
+  });
+
+  blessed.ProgressBar.returns({
+    setContent: sinon.spy(),
+    setProgress: sinon.spy()
   });
 });
 
